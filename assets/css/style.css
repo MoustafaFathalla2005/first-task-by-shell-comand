@@ -1,0 +1,110 @@
+.section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 5px;
+    padding: 2px;
+}
+
+
+.section div {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.section .div1 {
+    background-image: url('../image/WhatsApp Image 2025-05-05 at 12.00.47 AM.jpeg');
+}
+.section .div2 {
+    background-image: url('../image/WhatsApp\ Image\ 2025-05-05\ at\ 12.00.48\ AM.jpeg');
+}
+.section .div3 {
+    background-image: url('../image/WhatsApp Image 2025-05-05 at 12.00.58 AM.jpeg');
+}
+.section .div4 {
+    background-image: url('../image/WhatsApp Image 2025-05-05 at 12.01.05 AM (1).jpeg');
+}
+.section .div5 {
+    background-image: url('../image/WhatsApp Image 2025-05-05 at 12.01.05 AM.jpeg');
+}
+.section .div6 {
+    background-image: url('../image/WhatsApp Image 2025-05-05 at 12.01.06 AM (1).jpeg');
+}
+
+
+.section div::before {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    transition: height 0.5s ease;
+    z-index: 1;
+}
+
+.section div:hover::before {
+    height: 100%;
+}
+
+
+.section div .btn,
+.section div p {
+    position: relative;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #fff;
+    font-size: 22px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    z-index: 2;
+    font-weight: bold;
+}
+
+
+.section div:hover .btn,
+.section div:hover p {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+
+.section div:hover p {
+    background-color: transparent;
+}
+
+
+
+
+@media (max-width: 750px) {
+    .section {
+        grid-template-columns: 1fr;
+    }
+
+    .section div {
+        height: 250px;
+    }
+
+    .section div .btn,
+    .section div p {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+}
+
+
+
+/* في خاصية اسمها 
+بتخلي بلور ورا العنصر في خلفيته
+backdrop-filter: blur(2px); */
